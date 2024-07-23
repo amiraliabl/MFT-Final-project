@@ -22,36 +22,40 @@ Welcome to the Library Management System! This project is a simple implementatio
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/amiraliabl/library-management-system.git
-   cd library-management-system
+git clone https://github.com/amiraliabl/library-management-system.git
+cd library-management-system
 
 2.Install dependencies:
-     Ensure you have Python installed. If not, download and install it [here](https://www.python.org/downloads/).
+Ensure you have Python installed. If not, download and install it [here](https://www.python.org/downloads/).
 
-3. run the application
+3. run the application:
      python main.py
-##Usage
+Usage
+Run the application:
 
-      1. Run the application:
-         python main.py
+bash
+Copy code
+python main.py
+Select your role:
 
-      2. Select your role:
-         Enter 1 for Member
-         Enter 2 for Admin
-     
-  5. Member optiom:
-     .Register or login to your account
-     .Search for books
-     .Borrow books
-     .List borrowed books
+Enter 1 for Member
+Enter 2 for Admin
+Member Options:
 
-   6. Admin option
-      .Add books to the catalog
-      .Remove books from the catalog
-      .List all books
-      .View borrowed books
-      .View member list
+Register or login to your account
+Search for books
+Borrow books
+List borrowed books
+Admin Options:
 
+Add books to the catalog
+Remove books from the catalog
+List all books
+View borrowed books
+View member list
+
+
+      
 ## csv file path
 Ensure the following CSV files are present in the project directory:
 .members.csv: Stores member details.
