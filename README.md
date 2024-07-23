@@ -20,16 +20,16 @@ Welcome to the Library Management System! This project is a simple implementatio
 
 ## Setup
 
-1. **Clone the repository**:
-   ```bash
+   1. **Clone the repository**:
+      ```bash
    git clone https://github.com/amiraliabl/library-management-system.git
    cd library-management-system
 
-2.Install dependencies:
-Ensure you have Python installed. If not, download and install it [here](https://www.python.org/downloads/).
+   2.Install dependencies:
+   Ensure you have Python installed. If not, download and install it [here](https://www.python.org/downloads/).
 
-3. run the application:
-     python main.py
+   3. run the application:
+        python main.py
 
     
      
