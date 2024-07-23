@@ -25,12 +25,13 @@ Welcome to the Library Management System! This project is a simple implementatio
    git clone https://github.com/amiraliabl/library-management-system.git
    cd library-management-system
 
-   2.Install dependencies:
+2.Install dependencies:
      Ensure you have Python installed. If not, download and install it [here](https://www.python.org/downloads/).
 
-   3. run the application
+3. run the application
      python main.py
 ##Usage
+
       1. Run the application:
          python main.py
 
@@ -38,13 +39,13 @@ Welcome to the Library Management System! This project is a simple implementatio
          Enter 1 for Member
          Enter 2 for Admin
      
-  4. Member optiom:
+  5. Member optiom:
      .Register or login to your account
      .Search for books
      .Borrow books
      .List borrowed books
 
-   5. Admin option
+   6. Admin option
       .Add books to the catalog
       .Remove books from the catalog
       .List all books
