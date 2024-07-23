@@ -31,13 +31,13 @@ Welcome to the Library Management System! This project is a simple implementatio
    3. run the application
      python main.py
   
-##Usage
-   1. Run the application:
-      python main.py
+   ##Usage
+      1. Run the application:
+         python main.py
 
-   2. Select your role:
-      Enter 1 for Member
-      Enter 2 for Admin
+      2. Select your role:
+         Enter 1 for Member
+         Enter 2 for Admin
      
   4. Member optiom:
      .Register or login to your account
