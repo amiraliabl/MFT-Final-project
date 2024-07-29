@@ -21,7 +21,7 @@ class Admin:
             csv_write = csv.writer(books)
             csv_write.writerow([Book.name,Book.author,Book.id])
             add_line()
-        print(ColoredNotification(f"The book was successfully added!\nThe book id is : {Book.id}"))
+        print(ColoredNotification(f"The book was successfully added!\nThe book id is : {Book.id},", 'red'))
     
     def removeBook():
         Book.id = input(ColoredNotification('please enter id of the book that you want to remove : ','blue'))
