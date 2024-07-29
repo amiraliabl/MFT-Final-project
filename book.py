@@ -3,7 +3,7 @@ import random
 
 
 def is_BookID_unique(id):
-    with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+    with open("books.csv") as books:
         content = csv.DictReader(books)
         for row in content:
             if eval(row['id']) == id:

@@ -17,7 +17,7 @@ class Admin:
         while not is_BookID_unique(Id):
             Id = generate_BookID()
         Book.id = Id
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv", 'a') as books:
+        with open("books.csv", 'a') as books:
             csv_write = csv.writer(books)
             csv_write.writerow([Book.name,Book.author,Book.id])
             add_line()
@@ -25,7 +25,7 @@ class Admin:
     
     def removeBook():
         Book.id = input(ColoredNotification('please enter id of the book that you want to remove : ','blue'))
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = pd.read_csv(books)
             csv_reader = csv.DictReader(books)
             lineCounter = 0
@@ -34,13 +34,13 @@ class Admin:
                 if row['id'] == Book.id:
                     break
             content = content.drop(content.index[lineCounter])  # remove the row that we want
-            content.to_csv("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv", index=False)
+            content.to_csv("books.csv", index=False)
         add_line()
         print(ColoredNotification("book was successfully removed!", 'blue'))
     
     def searchBook():
         Book.id = input(ColoredNotification('please enter the id of book : ', 'blue'))
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = csv.DictReader(books)
             for row in content:
                 if row['id'] == Book.id:
@@ -60,7 +60,7 @@ class Admin:
                 print(ColoredNotification(f"{line_counter}|name of member:{row['nameOfMember']}|ID of member:{row['IDOfMember']}|ID of book:{row['IDofBook']}", 'green'))
                 
     def memberList():
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\members.csv") as members:
+        with open("members.csv") as members:
             content = csv.DictReader(members)
             line_counter = 0
             for row in content:
@@ -68,7 +68,7 @@ class Admin:
                 print(ColoredNotification(f"{line_counter}| name:{row['name']}|email:{row['email']}|ID:{row['id']}",'green'))
                 
     def listOfbook():
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = csv.DictReader(books)
             line_counter = 0
             for row in content:
@@ -79,7 +79,7 @@ class Admin:
     def login(Admin):
         email = input('please enter your email : ')
         password = input('please enter your password : ')
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\admins.csv") as listOfAdmin:
+        with open("admins.csv") as listOfAdmin:
             admins = csv.DictReader(listOfAdmin)
             for row in admins:
                 if row['email'] == email and row['password'] == password:

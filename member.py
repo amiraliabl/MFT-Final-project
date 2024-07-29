@@ -7,7 +7,7 @@ from tools import add_line
 
 
 def capacity():
-    with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\members.csv") as members:
+    with open("members.csv") as members:
         content = csv.DictReader(members)
         member_counter = 0
         for row in content:
@@ -24,7 +24,7 @@ def generate_MemberID():
 
 
 def is_memberID_unique(id):
-    with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\members.csv") as members:
+    with open("members.csv") as members:
         content = csv.DictReader(members)
         for row in content:
             if eval(row['id']) == id:
@@ -46,11 +46,11 @@ class Member:
     def borrowBook(Member):
         ClearTerminal()
         Book.id = input(ColoredNotification('please enter the id of book that you want to borrow', 'green'))
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = csv.DictReader(books)
             for row in content:
                 if row['id'] == Book.id.lower():
-                    with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\list_of_borrow.csv",'a') as borrow_list:
+                    with open("list_of_borrow.csv", 'a') as borrow_list:
                         csv_writer = csv.writer(borrow_list)
                         csv_writer.writerow([Member.name,Member.Id,Book.id])
                         print(ColoredNotification('you have successfully borrowed this book!','red'))
@@ -61,7 +61,7 @@ class Member:
     def searchBook():
         ClearTerminal()
         Book.id = input(ColoredNotification('please enter the id of book', 'blue'))
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = csv.DictReader(books)
             for row in content:
                 if row['id'] == Book.id:
@@ -72,7 +72,7 @@ class Member:
                 
     def listOfbook():
         ClearTerminal()
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\books.csv") as books:
+        with open("books.csv") as books:
             content = csv.DictReader(books)
             line_counter = 0
             for row in content:
@@ -83,7 +83,7 @@ class Member:
     def login(Member):
         email = input(ColoredNotification('please enter your email : ', 'green'))
         password = input(ColoredNotification('please enter your password : ', 'green'))
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\members.csv") as members:
+        with open("members.csv") as members:
             content = csv.DictReader(members)
             for row in content:
                 if row['email'] == email.lower() and row['password'] == password.lower():             
@@ -101,7 +101,7 @@ class Member:
             member_id = generate_MemberID()
             while not is_memberID_unique(member_id):
                 member_id = generate_MemberID()
-            with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\members.csv", 'a') as members:
+            with open("members.csv", 'a') as members:
                 csv_writer = csv.writer(members)
                 csv_writer.writerow([name,email,password,member_id])
             add_line()
