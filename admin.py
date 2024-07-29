@@ -26,15 +26,16 @@ class Admin:
     def removeBook():
         Book.id = input(ColoredNotification('please enter id of the book that you want to remove : ','blue'))
         with open("books.csv") as books:
-            content = pd.read_csv(books)
             csv_reader = csv.DictReader(books)
-            lineCounter = 1
-            for row in csv_reader:
-                lineCounter += 1
-                if row['id'] == Book.id:
+            list_of_id = [row["id"] for row in csv_reader]
+            lineCounter = 0
+            for item in list_of_id[::-1]:
+                lineCounter -= 1
+                if item == Book.id:
                     break
-            content = content.drop(content.index[-lineCounter])  # remove the row that we want
-            content.to_csv("books.csv", index=False)
+        content = pd.read_csv("books.csv")
+        content = content.drop(content.index[lineCounter])  # remove the row that we want
+        content.to_csv("books.csv", index=False)
         add_line()
         print(ColoredNotification("book was successfully removed!", 'blue'))
     
