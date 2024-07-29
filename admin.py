@@ -28,12 +28,12 @@ class Admin:
         with open("books.csv") as books:
             content = pd.read_csv(books)
             csv_reader = csv.DictReader(books)
-            lineCounter = 0
+            lineCounter = 1
             for row in csv_reader:
                 lineCounter += 1
                 if row['id'] == Book.id:
                     break
-            content = content.drop(content.index[lineCounter])  # remove the row that we want
+            content = content.drop(content.index[-lineCounter])  # remove the row that we want
             content.to_csv("books.csv", index=False)
         add_line()
         print(ColoredNotification("book was successfully removed!", 'blue'))
