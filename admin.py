@@ -52,7 +52,7 @@ class Admin:
                 print(ColoredNotification('book was not found!', 'red'))
     
     def borrowList():
-        with open("C:\\Users\\NoteBook\\Documents\\book_management_project\\list_of_borrow.csv") as borrowList:
+        with open("list_of_borrow.csv") as borrowList:
             borrowListReader = csv.DictReader(borrowList)
             line_counter = 0
             for row in borrowListReader:
